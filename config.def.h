@@ -5,21 +5,24 @@ static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "firacode:size=10", "fontawesome:size=10" };
+static const char *fonts[]          = { "firacode:size=10", "fontawesome:size=14" };
 static const char dmenufont[]       = "firacode:size=10";
-static const char col_gray1[]       = "#080808"; // background
-static const char col_gray2[]       = "#444444"; // inactive window border
-static const char col_gray3[]       = "#b2b2b2"; // inactive foreground (font)
-static const char col_gray4[]       = "#eeeeee"; // active tag/window foreground (font)
-static const char col_cyan[]        = "#85dc85"; // active window border/secondary bar color
+static const char inactivebgcolor[]       = "#080808";
+static const char inactivefgcolor[]       = "#eeeeee";
+static const char inactivebordercolor[]   = "#b2b2b2";
+static const char activebgcolor[]         = "#080808";
+static const char activefgcolor[]         = "#85dc85";
+static const char activebordercolor[]     = "#85dc85";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	/* [SchemeNorm] = { col_gray3, col_gray1, col_gray2 }, */
+	/* [SchemeSel]  = { col_gray4, col_cyan,  col_cyan  }, */
+	[SchemeNorm] = { inactivefgcolor, inactivebgcolor, inactivebordercolor },
+	[SchemeSel]  = { activefgcolor  , activebgcolor  , activebordercolor   },
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -59,7 +62,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", inactivebgcolor, "-nf", inactivefgcolor, "-sb", activebgcolor, "-sf", activefgcolor, NULL };
 static const char *rofimaincmd[] = { "exec", "$HOME/.rofi/apps", NULL };
 static const char *rofiruncmd[]  = { "exec", "$HOME/.rofi/run", NULL };
 static const char *termcmd[]     = { "kitty", NULL };
