@@ -5,8 +5,13 @@ static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "firacode:size=10", "fontawesome:size=14" };
-static const char dmenufont[]       = "firacode:size=10";
+static const char *fonts[]          = {
+	"Fira Code:size=10",
+	"Font Awesome 5 Brands:size=12:antialias=true:autohint=true:style=Regular",
+	"Font Awesome 5 Free:size=12:antialias=true:autohint=true:style=Regular",
+	"Font Awesome 5 Free:size=12:antialias=true:autohint=true:style=Solid"
+};
+static const char dmenufont[]       = "Fira Code:size=10";
 static const char inactivebgcolor[]       = "#080808";
 static const char inactivefgcolor[]       = "#eeeeee";
 static const char inactivebordercolor[]   = "#b2b2b2";
