@@ -34,8 +34,8 @@ static const char *colors[][3]      = {
 
 static const char *const autostart[] = {
 	"picom", NULL,
-	"lxsession", NULL,
-	"bash", "~/.fehbg", NULL,
+	//"lxsession", NULL,
+	"nitrogen", "--restore", NULL,
 	"nm-applet", NULL,
 	"volctl", NULL,
 	"blueman-applet", NULL,
