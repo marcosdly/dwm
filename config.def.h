@@ -108,6 +108,11 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
+	{ MODKEY|ControlMask|ShiftMask, XK_j,      viewnext,       {0} },
+	{ MODKEY|ControlMask|ShiftMask, XK_k,      viewprev,       {0} },
+/* 	{ MODKEY|ShiftMask,             XK_Right,  tagtonext,      {0} }, */
+/* 	{ MODKEY|ShiftMask,             XK_Left,   tagtoprev,      {0} }, */
+
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
