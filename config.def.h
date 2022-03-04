@@ -32,6 +32,16 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { activefgcolor  , activebgcolor  , activebordercolor   },
 };
 
+static const char *const autostart[] = {
+	"picom", NULL,
+	"lxsession", NULL,
+	"bash", "~/.fehbg", NULL,
+	"nm-applet", NULL,
+	"volctl", NULL,
+	"blueman-applet", NULL,
+	NULL /* terminate */
+};
+
 /* tagging */
 static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
 
