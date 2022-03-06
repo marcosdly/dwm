@@ -87,6 +87,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", inactivebgcolor, "-nf", inactivefgcolor, "-sb", activebgcolor, "-sf", activefgcolor, NULL };
 static const char *termcmd[]     = { "kitty", NULL };
+static const char *nitrogen[] = { "nitrogen", "--restore", NULL };
 
 #include "movestack.c"
 static Key keys[] = {
@@ -110,6 +111,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
+	{ MODKEY|ShiftMask,             XK_p, 	   spawn,          {.v = nitrogen } },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
