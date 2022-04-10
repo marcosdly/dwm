@@ -142,7 +142,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_q,      try_quit,       {0} },
+	{ MODKEY|ShiftMask|ControlMask, XK_q,      quit,           {0} },
 };
 
 /* button definitions */
@@ -162,3 +163,8 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
 
+/* how many windows should be open when quitting? */
+/* on a stock dwm install, this seems to be two; however, you'll have to
+ * change it depending on how many invisible X windows exist */
+/* you can get a list with `xwininfo -tree -root`. */
+static const int EMPTY_WINDOW_COUNT = 2;
